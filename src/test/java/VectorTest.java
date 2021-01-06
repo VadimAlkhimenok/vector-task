@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
+import vector.Vector;
 
 class VectorTest {
     Vector vector = new Vector(2, 2, 2);
@@ -50,3 +51,4 @@ class VectorTest {
         Assertions.assertEquals(actual.getY(), Double.valueOf(-1));
         Assertions.assertEquals(actual.getZ(), Double.valueOf(-1));    }
 }
+

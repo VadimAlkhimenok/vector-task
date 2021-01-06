@@ -1,3 +1,5 @@
+package vector;
+
 public class Vector {
     private double x;
     private double y;
@@ -80,7 +82,7 @@ public class Vector {
 
     @Override
     public String toString() {
-        return "Vector = " + "x: " + x + ", y: " + y + ", z: " + z;
+        return "vector.Vector = " + "x: " + x + ", y: " + y + ", z: " + z;
     }
 
 }
