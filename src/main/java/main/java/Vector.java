@@ -27,4 +27,8 @@ public class Vector {
         );
     }
 
+    public double cos(Vector newVector) {
+        return getScalar(newVector) / this.lengthOfVector() * newVector.lengthOfVector();
+    }
+
 }
