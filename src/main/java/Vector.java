@@ -1,7 +1,8 @@
 public class Vector {
-    double x;
-    double y;
-    double z;
+    private double x;
+    private double y;
+    private double z;
+
 
     public Vector(double x, double y, double z) {
         this.x = x;
@@ -9,19 +10,43 @@ public class Vector {
         this.z = z;
     }
 
+    public double getX() {
+        return x;
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
+
+    public double getZ() {
+        return z;
+    }
+
+    public void setZ(double z) {
+        this.z = z;
+    }
+
     public double lengthOfVector() {
-        return Math.sqrt((x * x) + (y * y) + (z * z));
+        return Math.sqrt((this.getX() * this.getX()) + (this.getY() * this.getY()) + (this.getZ() * this.getZ()));
     }
 
     public double getScalar(Vector newVector) {
-        return (newVector.x * x) + (newVector.y * y) + (newVector.z * z);
+        return (newVector.getX() * this.getX()) + (newVector.getY() * this.getY()) + (newVector.getZ() * this.getZ());
     }
 
     public Vector crossProduct(Vector newVector) {
         return new Vector(
-                y * newVector.z - z * newVector.y,
-                z * newVector.x - x * newVector.z,
-                x * newVector.y - y * newVector.x
+                this.getY() * newVector.getZ() - this.getZ() * newVector.getY(),
+                this.getZ() * newVector.getX() - this.getX() * newVector.getZ(),
+                this.getX() * newVector.getY() - this.getY() * newVector.getX()
         );
     }
 
@@ -31,17 +56,17 @@ public class Vector {
 
     public Vector sum(Vector newVector) {
         return new Vector(
-                x + newVector.x,
-                y + newVector.y,
-                z + newVector.z
+                this.getX() + newVector.getX(),
+                this.getY() + newVector.getY(),
+                this.getZ() + newVector.getZ()
         );
     }
 
     public Vector dif(Vector newVector) {
         return new Vector(
-                x - newVector.x,
-                y - newVector.y,
-                z - newVector.z
+            this.getX() - newVector.getX(),
+            this.getY() - newVector.getY(),
+            this.getZ() - newVector.getZ()
         );
     }
 
@@ -51,6 +76,11 @@ public class Vector {
             vectors[i] = new Vector(Math.random(), Math.random(), Math.random());
         }
         return vectors;
+    }
+
+    @Override
+    public String toString() {
+        return "Vector = " + "x: " + x + ", y: " + y + ", z: " + z;
     }
 
 }
