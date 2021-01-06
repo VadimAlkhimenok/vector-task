@@ -47,4 +47,12 @@ public class Vector {
         );
     }
 
+    public static Vector[] createVectorsRandom(int number) {
+        Vector[] vectors = new Vector[number];
+        for (int i = 0; i < number; i++){
+            vectors[i] = new Vector(Math.random(), Math.random(), Math.random());
+        }
+        return vectors;
+    }
+
 }
