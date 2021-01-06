@@ -19,4 +19,12 @@ public class Vector {
         return (newVector.x * x) + (newVector.y * y) + (newVector.z * z);
     }
 
+    public Vector crossProduct(Vector newVector) {
+        return new Vector(
+                y * newVector.z - z * newVector.y,
+                z * newVector.x - x * newVector.z,
+                x * newVector.y - y * newVector.x
+        );
+    }
+
 }
