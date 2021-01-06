@@ -18,4 +18,35 @@ class VectorTest {
         double expected = 18.0;
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    public void crossProduct() {
+        Vector actual = vector.crossProduct(testVector);
+        Assertions.assertEquals(actual.getX(), Double.valueOf(0));
+        Assertions.assertEquals(actual.getY(), Double.valueOf(0));
+        Assertions.assertEquals(actual.getZ(), Double.valueOf(0));
+    }
+
+    @Test
+    public void cos() {
+        double actual = vector.cos(testVector);
+        double expected = 27.0;
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void sum() {
+        Vector actual = vector.sum(testVector);
+        System.out.println(actual);
+        Assertions.assertEquals(actual.getX(), Double.valueOf(5));
+        Assertions.assertEquals(actual.getY(), Double.valueOf(5));
+        Assertions.assertEquals(actual.getZ(), Double.valueOf(5));
+    }
+
+    @Test
+    public void dif() {
+        Vector actual = vector.dif(testVector);
+        Assertions.assertEquals(actual.getX(), Double.valueOf(-1));
+        Assertions.assertEquals(actual.getY(), Double.valueOf(-1));
+        Assertions.assertEquals(actual.getZ(), Double.valueOf(-1));    }
 }
