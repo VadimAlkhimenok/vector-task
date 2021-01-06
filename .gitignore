@@ -1,4 +1,4 @@
 .idea
 
-vector-task.iml
-pom.xml
+*.iml
+*.xml
