@@ -31,4 +31,20 @@ public class Vector {
         return getScalar(newVector) / this.lengthOfVector() * newVector.lengthOfVector();
     }
 
+    public Vector sum(Vector newVector) {
+        return new Vector(
+                x + newVector.x,
+                y + newVector.y,
+                z + newVector.z
+        );
+    }
+
+    public Vector dif(Vector newVector) {
+        return new Vector(
+                x - newVector.x,
+                y - newVector.y,
+                z - newVector.z
+        );
+    }
+
 }
