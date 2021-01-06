@@ -1,5 +1,3 @@
-package main.java;
-
 public class Vector {
     double x;
     double y;
