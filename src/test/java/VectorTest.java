@@ -12,4 +12,10 @@ class VectorTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Test
+    public void getScalar() {
+        double actual = vector.getScalar(testVector);
+        double expected = 18.0;
+        Assertions.assertEquals(expected, actual);
+    }
 }
