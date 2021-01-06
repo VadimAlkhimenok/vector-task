@@ -14,4 +14,9 @@ public class Vector {
     public double lengthOfVector() {
         return Math.sqrt((x * x) + (y * y) + (z * z));
     }
+
+    public double getScalar(Vector newVector) {
+        return (newVector.x * x) + (newVector.y * y) + (newVector.z * z);
+    }
+
 }
