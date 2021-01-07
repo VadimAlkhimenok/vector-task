@@ -8,6 +8,8 @@ public class SolidOfRevolution extends Shape {
         this.radius = radius;
     }
 
+    public SolidOfRevolution () {}
+
     public double getRadius() {
         return radius;
     }
