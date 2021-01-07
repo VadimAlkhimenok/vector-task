@@ -1,6 +1,6 @@
 package classHierarchy;
 
-public class Shape {
+public class Shape implements ShapeInterface {
     private double volume;
 
     public Shape (double volume) {
