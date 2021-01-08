@@ -1,10 +1,10 @@
 package classHierarchy;
 
-public class Box extends Shape {
+public class Box implements Shape {
     private double maxVolumeOfBox;
+    private double volume;
 
     public Box(double maxVolumeOfBox) {
-        super(maxVolumeOfBox); // ???
         this.maxVolumeOfBox = maxVolumeOfBox;
     }
 
@@ -21,5 +21,10 @@ public class Box extends Shape {
             System.out.println("Error! Shape wasn't added.");
             return false;
         }
+    }
+
+    @Override
+    public double getVolume() {
+        return volume;
     }
 }

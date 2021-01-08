@@ -1,10 +1,9 @@
 package classHierarchy;
 
-public class SolidOfRevolution extends Shape {
-    private double radius;
+abstract class SolidOfRevolution implements Shape {
+    double radius;
 
-    public SolidOfRevolution(double volume, double radius) {
-        super(volume);
+    public SolidOfRevolution(double radius) {
         this.radius = radius;
     }
 
@@ -15,7 +14,12 @@ public class SolidOfRevolution extends Shape {
 
 class Ball extends SolidOfRevolution {
     public Ball(double radius) {
-        super(Math.PI * Math.pow(radius, 3) * 4 / 3, radius); // ????
+        super(radius);
+    }
+
+    @Override
+    public double getVolume() {
+        return Math.PI * Math.pow(radius, 3) * 4 / 3;
     }
 }
 
@@ -23,11 +27,12 @@ class Cylinder extends SolidOfRevolution {
     private double height;
 
     public Cylinder(double radius, double height) {
-        super(Math.PI * Math.pow(radius, 2) * height, radius); // ???
+        super(radius);
         this.height = height;
     }
 
-    public double getHeight() {
-        return height;
+    @Override
+    public double getVolume() {
+        return Math.PI * Math.pow(radius, 2) * height;
     }
 }

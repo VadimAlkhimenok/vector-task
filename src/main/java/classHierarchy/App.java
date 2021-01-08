@@ -1,29 +1,28 @@
 package classHierarchy;
 
+import static classHierarchy.TypeOfShapes.*;
+
 public class App {
     public static void main(String[] args) {
+        // Factory
+        Factory factory = new Factory();
+        Shape ball = factory.create(BALL, 4.5);
+        Shape cylinder = factory.create(CYLINDER, 10, 4.5);
+        Shape pyramid = factory.create(PYRAMID, 20, 35);
         // Ball
-        Ball ball = new Ball(4.5);
         System.out.println("-Ball-");
-        System.out.println("Get radius: " + ball.getRadius());
         System.out.println("Get volume: " + ball.getVolume());
 
         System.out.println();
 
         // Cylinder
-        Cylinder cylinder = new Cylinder(10, 4.5);
         System.out.println("-Cylinder-");
-        System.out.println("Get height: " + cylinder.getHeight());
-        System.out.println("Get radius: " + cylinder.getRadius());
         System.out.println("Get volume: " + cylinder.getVolume());
 
         System.out.println();
 
         // Pyramid
-        Pyramid pyramid = new Pyramid(20, 35);
         System.out.println("-Pyramid-");
-        System.out.println("Get s: " + pyramid.getS());
-        System.out.println("Get height: " + pyramid.getHeight());
         System.out.println("Get volume: " + pyramid.getVolume());
 
         System.out.println();
