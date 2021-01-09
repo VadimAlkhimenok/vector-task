@@ -84,5 +84,4 @@ public class Vector {
     public String toString() {
         return "vector.Vector = " + "x: " + x + ", y: " + y + ", z: " + z;
     }
-
 }

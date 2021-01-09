@@ -28,15 +28,31 @@ public class App {
         System.out.println();
 
         // Box
-        Box box = new Box(1000);
+        Box box = new Box(10000);
 
         System.out.println("-Box-");
+
         System.out.println("Current volume of box: " + box.getMaxVolumeOfBox());
         box.add(ball);
+        box.add(ball);
+        box.getAllShapesInBox();
+
+        System.out.println();
+
         System.out.println("Current volume of box: " + box.getMaxVolumeOfBox());
         box.add(cylinder);
+        box.add(cylinder);
+        box.getAllShapesInBox();
+
+        System.out.println();
+
         System.out.println("Current volume of box: " + box.getMaxVolumeOfBox());
         box.add(pyramid);
-        System.out.println("Current volume of box: " + box.getMaxVolumeOfBox());
+        box.add(pyramid);
+        box.getAllShapesInBox();
+
+        System.out.println();
+
+        System.out.println("Last current volume of box: " + box.getMaxVolumeOfBox());
     }
 }
