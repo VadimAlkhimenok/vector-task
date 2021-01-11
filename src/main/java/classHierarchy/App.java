@@ -1,5 +1,7 @@
 package classHierarchy;
 
+import java.util.Arrays;
+
 import static classHierarchy.TypeOfShapes.*;
 
 public class App {
@@ -54,5 +56,8 @@ public class App {
         System.out.println();
 
         System.out.println("Last current volume of box: " + box.getMaxVolumeOfBox());
+
+        //
+        System.out.println(Arrays.toString(TypeOfShapes.values()));
     }
 }

@@ -1,6 +1,8 @@
+package vector;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
-import vector.Vector;
+
 
 class VectorTest {
     Vector vector = new Vector(2, 2, 2);
