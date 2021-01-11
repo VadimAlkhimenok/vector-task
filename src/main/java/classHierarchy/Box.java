@@ -2,17 +2,16 @@ package classHierarchy;
 
 import java.util.ArrayList;
 
-public class Box implements Shape {
-    private double maxVolumeOfBox;
+public class Box {
     private double volume;
     private ArrayList<Shape> arrayShapes = new ArrayList<>();
 
-    public Box(double maxVolumeOfBox) {
-        this.maxVolumeOfBox = maxVolumeOfBox;
+    public Box(double volume) {
+        this.volume = volume;
     }
 
-    public double getMaxVolumeOfBox() {
-        return maxVolumeOfBox;
+    public double getVolume() {
+        return volume;
     }
 
     public void getAllShapesInBox() {
@@ -20,9 +19,9 @@ public class Box implements Shape {
     }
 
     public boolean add(Shape shape) {
-        if (maxVolumeOfBox >= shape.getVolume()) {
+        if (volume >= shape.getVolume()) {
             arrayShapes.add(shape);
-            maxVolumeOfBox -= shape.getVolume();
+            volume -= shape.getVolume();
 
             System.out.println("Success! Shape was added.");
             return true;
@@ -30,10 +29,5 @@ public class Box implements Shape {
             System.out.println("Error! Shape wasn't added.");
             return false;
         }
-    }
-
-    @Override
-    public double getVolume() {
-        return volume;
     }
 }
