@@ -1,6 +1,6 @@
 package classHierarchy;
 
-abstract public class Pyramid implements Shape {
+public class Pyramid implements Shape {
     private double s;
     private double height;
 

@@ -34,28 +34,25 @@ public class App {
 
         System.out.println("-Box-");
 
-        System.out.println("Current volume of box: " + box.getMaxVolumeOfBox());
+        System.out.println("Current volume of box: " + box.getVolume());
         box.add(ball);
         box.add(ball);
-        box.getAllShapesInBox();
 
         System.out.println();
 
-        System.out.println("Current volume of box: " + box.getMaxVolumeOfBox());
+        System.out.println("Current volume of box: " + box.getVolume());
         box.add(cylinder);
         box.add(cylinder);
-        box.getAllShapesInBox();
 
         System.out.println();
 
-        System.out.println("Current volume of box: " + box.getMaxVolumeOfBox());
+        System.out.println("Current volume of box: " + box.getVolume());
         box.add(pyramid);
         box.add(pyramid);
-        box.getAllShapesInBox();
 
         System.out.println();
 
-        System.out.println("Last current volume of box: " + box.getMaxVolumeOfBox());
+        System.out.println("Last current volume of box: " + box.getVolume());
 
         //
         System.out.println(Arrays.toString(TypeOfShapes.values()));

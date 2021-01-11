@@ -2,7 +2,7 @@ package classHierarchy;
 
 import java.util.ArrayList;
 
-public class Box {
+public class Box implements Shape {
     private double volume;
     private ArrayList<Shape> arrayShapes = new ArrayList<>();
 
@@ -10,6 +10,7 @@ public class Box {
         this.volume = volume;
     }
 
+    @Override
     public double getVolume() {
         return volume;
     }

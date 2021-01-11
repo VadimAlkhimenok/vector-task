@@ -9,8 +9,7 @@ public class Factory {
         } else if (CYLINDER.equals(shape)) {
             return new Cylinder(args[0], args[1]);
         } else if (PYRAMID.equals(shape)) {
-            return null;
-//            return new Pyramid(args[0], args[1]);
+            return new Pyramid(args[0], args[1]);
         } else {
             return null;
         }
