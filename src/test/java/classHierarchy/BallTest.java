@@ -4,13 +4,13 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class PyramidTest {
-    Pyramid pyramid = new Pyramid(10, 10);
+class BallTest {
+    Ball ball = new Ball(10);
 
     @Test
     void getVolume() {
-        double actual = pyramid.getVolume();
-        double expected = 33.333333333333336;
+        double actual = ball.getVolume();
+        double expected = 4188.790204786391;
         assertEquals(expected, actual);
     }
 }

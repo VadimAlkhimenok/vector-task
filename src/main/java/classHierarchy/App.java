@@ -37,18 +37,21 @@ public class App {
         System.out.println("Current volume of box: " + box.getVolume());
         box.add(ball);
         box.add(ball);
+        System.out.println("All shapes in box: " + box.getAllShapesInBox());
 
         System.out.println();
 
         System.out.println("Current volume of box: " + box.getVolume());
         box.add(cylinder);
         box.add(cylinder);
+        System.out.println("All shapes in box: " + box.getAllShapesInBox());
 
         System.out.println();
 
         System.out.println("Current volume of box: " + box.getVolume());
         box.add(pyramid);
         box.add(pyramid);
+        System.out.println("All shapes in box: " + box.getAllShapesInBox());
 
         System.out.println();
 
