@@ -1,6 +1,6 @@
 package classHierarchy;
 
-class Ball extends SolidOfRevolution {
+public class Ball extends SolidOfRevolution {
     public Ball(double radius) {
         super(radius);
     }
