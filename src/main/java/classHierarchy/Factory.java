@@ -5,6 +5,8 @@ import static classHierarchy.TypeOfShapes.*;
 public class Factory {
     private static Factory factory;
 
+    private Factory() {}
+
     public static Factory getFactory() {
         if (factory == null) {
             factory = new Factory();
