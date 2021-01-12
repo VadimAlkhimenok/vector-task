@@ -1,9 +1,13 @@
 package classHierarchy;
 
 abstract public class SolidOfRevolution implements Shape {
-    public double radius;
+    private double radius;
 
     public SolidOfRevolution(double radius) {
         this.radius = radius;
+    }
+
+    public double getRadius() {
+        return radius;
     }
 }
