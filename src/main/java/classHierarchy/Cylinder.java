@@ -1,6 +1,6 @@
 package classHierarchy;
 
-class Cylinder extends SolidOfRevolution {
+public class Cylinder extends SolidOfRevolution {
     private double height;
 
     public Cylinder(double radius, double height) {
