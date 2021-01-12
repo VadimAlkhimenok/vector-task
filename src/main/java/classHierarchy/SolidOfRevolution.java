@@ -1,7 +1,7 @@
 package classHierarchy;
 
 abstract public class SolidOfRevolution implements Shape {
-    private double radius;
+    public double radius;
 
     public SolidOfRevolution(double radius) {
         this.radius = radius;
