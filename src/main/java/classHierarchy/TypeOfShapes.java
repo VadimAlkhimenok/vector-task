@@ -5,18 +5,10 @@ public enum TypeOfShapes {
     CYLINDER (2),
     PYRAMID (3);
 
-    private int numberShape;
+    private final int numberShape;
 
     TypeOfShapes(int numberShape) {
         this.numberShape = numberShape;
-    }
-
-    public void setNumberShape(int numberShape) {
-        this.numberShape = numberShape;
-    }
-
-    public int setNumberShape() {
-        return numberShape;
     }
 
     @Override
