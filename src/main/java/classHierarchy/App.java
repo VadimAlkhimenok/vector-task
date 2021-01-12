@@ -7,10 +7,10 @@ import static classHierarchy.TypeOfShapes.*;
 public class App {
     public static void main(String[] args) {
         // Factory
-        Factory factory = new Factory();
-        Shape ball = factory.create(BALL, 4.5);
-        Shape cylinder = factory.create(CYLINDER, 10, 4.5);
-        Shape pyramid = factory.create(PYRAMID, 20, 35);
+        Shape ball = Factory.getFactory().create(BALL, 5);
+        Shape cylinder = Factory.getFactory().create(CYLINDER, 5, 5);
+        Shape pyramid = Factory.getFactory().create(PYRAMID, 5, 5);
+
         // Ball
         System.out.println("-Ball-");
         System.out.println("Get volume: " + ball.getVolume());
