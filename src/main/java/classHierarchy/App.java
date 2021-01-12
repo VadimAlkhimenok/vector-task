@@ -10,11 +10,9 @@ public class App {
         Shape ball = Factory.getFactory().create(BALL, 5);
         Shape cylinder = Factory.getFactory().create(CYLINDER, 5, 5);
         Shape pyramid = Factory.getFactory().create(PYRAMID, 5, 5);
-
         // Ball
         System.out.println("-Ball-");
         System.out.println("Get volume: " + ball.getVolume());
-
         System.out.println();
 
         // Cylinder
