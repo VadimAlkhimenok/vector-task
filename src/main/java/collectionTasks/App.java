@@ -22,7 +22,3 @@ public class App {
         System.out.println(InverseCollection.inverse(collection));
     }
 }
-
-
-// [2, 3, 6, 8, 9, 2]
-// 2 -> 2, 3 -> 1 number of array
