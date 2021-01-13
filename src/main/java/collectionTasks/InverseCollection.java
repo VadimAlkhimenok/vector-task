@@ -6,19 +6,24 @@ import java.util.*;
 
 public class InverseCollection {
 
-    public static Map inverse(Map<String, Shape> collection) {
-        Map<Shape, String> output = new HashMap<>();
-        ArrayList<Shape> col = new ArrayList<>();
+    public static <String, Shape> Map inverse(Map<String, Shape> collection) {
+        Map<Shape, Set<String> > output = new HashMap<Shape, Set<String> >();
 
+        for (Map.Entry<String, Shape> entry : collection.entrySet()) {
+            Shape oldVal = entry.getValue();
+            String oldKey = entry.getKey();
+            Set<String> newVal;
 
-        for (Map.Entry<String, Shape> item : collection.entrySet()) {
-            if (output.containsKey(item.getValue())) {
-                System.out.println(item.getKey());
-                output.put(col.add(item.getValue()), item.getKey());
+            if (output.containsKey(oldVal)) {
+                newVal = output.get(oldVal);
+            } else {
+                newVal = new HashSet<>();
             }
 
-            output.put(item.getValue(), item.getKey());
+            newVal.add(oldKey);
+            output.put(oldVal, newVal);
         }
+
         return output;
     }
 }

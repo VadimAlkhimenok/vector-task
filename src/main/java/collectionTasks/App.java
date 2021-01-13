@@ -12,16 +12,13 @@ public class App {
         Shape cylinder = new Cylinder(5 ,5);
         Shape pyramid = new Pyramid(5, 5);
 
-
         collection.put("1", ball);
         collection.put("2", cylinder);
         collection.put("3", pyramid);
         collection.put("4", ball);
-//        collection.put(5, cylinder);
-//        collection.put(6, pyramid);
-//            InverseCollection.inverse(collection);
-        System.out.println("Before: " + collection);
+        collection.put("5", ball);
+
         System.out.println();
-        System.out.println("After: " + InverseCollection.inverse(collection));
+        System.out.println(InverseCollection.inverse(collection));
     }
 }
