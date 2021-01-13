@@ -12,4 +12,11 @@ public class Cylinder extends SolidOfRevolution {
     public double getVolume() {
         return Math.PI * Math.pow(this.radius, 2) * height;
     }
+
+    @Override
+    public String toString() {
+        return "Cylinder{" +
+                "radius=" + radius +
+                '}';
+    }
 }

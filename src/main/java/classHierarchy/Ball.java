@@ -10,4 +10,11 @@ public class Ball extends SolidOfRevolution {
     public double getVolume() {
         return Math.PI * Math.pow(this.radius, 3) * 4 / 3;
     }
+
+    @Override
+    public String toString() {
+        return "Ball{" +
+                "radius=" + radius +
+                '}';
+    }
 }

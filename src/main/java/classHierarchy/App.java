@@ -55,7 +55,6 @@ public class App {
 
         System.out.println("Last current volume of box: " + box.getVolume());
 
-        //
         System.out.println(Arrays.toString(TypeOfShapes.values()));
     }
 }

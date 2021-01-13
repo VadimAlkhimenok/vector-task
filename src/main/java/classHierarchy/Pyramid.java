@@ -13,4 +13,12 @@ public class Pyramid implements Shape {
     public double getVolume() {
         return s * height * 1 / 3;
     }
+
+    @Override
+    public String toString() {
+        return "Pyramid{" +
+                "s=" + s +
+                ", height=" + height +
+                '}';
+    }
 }
