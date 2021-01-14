@@ -2,7 +2,7 @@ package collectionTasks;
 
 import java.util.*;
 
-public class InverseCollection {
+public class CollectionTasks {
 
     public static <K, V> Map <V, Collection<K>> inverse(Map<K, V> collection) {
         HashMap<V, Collection<K> > output = new HashMap<>();
@@ -20,6 +20,19 @@ public class InverseCollection {
             output.put(entry.getValue(), newVal);
         }
 
+        return output;
+    }
+
+    public static <K> Map <K, Integer> arrayToMap(K[] ks) {
+        Map<K, Integer> output = new HashMap<>();
+
+        for (K item : ks) {
+            Integer counter = 0;
+            for (K k : ks) {
+                if (item == k) counter++;
+            }
+            output.put(item, counter);
+        }
         return output;
     }
 }

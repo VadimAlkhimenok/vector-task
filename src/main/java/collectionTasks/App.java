@@ -2,10 +2,12 @@ package collectionTasks;
 
 import classHierarchy.*;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class App {
     public static void main(String[] args) {
+        // inverse
         Map<String, Shape> collection = new HashMap<>();
 
         Shape ball = new Ball(5);
@@ -18,7 +20,11 @@ public class App {
         collection.put("4", ball);
         collection.put("5", ball);
 
-        System.out.println();
-        System.out.println(InverseCollection.inverse(collection));
+        System.out.println("Inverse: " + CollectionTasks.inverse(collection));
+
+        // arrayToMap
+        Integer[] input = {1, 2, 1, 2, 5};
+
+        System.out.println("Array to map: " + CollectionTasks.arrayToMap(input));
     }
 }
