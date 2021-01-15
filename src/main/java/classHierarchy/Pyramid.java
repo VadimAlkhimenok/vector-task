@@ -1,5 +1,7 @@
 package classHierarchy;
 
+import java.util.Objects;
+
 public class Pyramid implements Shape {
     private double s;
     private double height;
@@ -20,5 +22,20 @@ public class Pyramid implements Shape {
                 "s=" + s +
                 ", height=" + height +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+
+        if ((o == null) || (getClass() != o.getClass())) return false;
+
+        Pyramid pyramid = (Pyramid) o;
+        return (s == pyramid.s) && (height == pyramid.height);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(s, height);
     }
 }

@@ -1,5 +1,7 @@
 package classHierarchy;
 
+import java.util.Objects;
+
 public class Cylinder extends SolidOfRevolution {
     private double height;
 
@@ -18,5 +20,20 @@ public class Cylinder extends SolidOfRevolution {
         return "Cylinder{" +
                 "radius=" + radius +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+
+        if ((o == null) || (getClass() != o.getClass())) return false;
+
+        Cylinder cylinder = (Cylinder) o;
+        return (radius == cylinder.radius) && (height == cylinder.height);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(radius, height);
     }
 }

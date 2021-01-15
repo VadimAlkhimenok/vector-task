@@ -1,5 +1,7 @@
 package classHierarchy;
 
+import java.util.Objects;
+
 public class Ball extends SolidOfRevolution {
 
     public Ball(double radius) {
@@ -16,5 +18,20 @@ public class Ball extends SolidOfRevolution {
         return "Ball{" +
                 "radius=" + radius +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+
+        if ((o == null) || (getClass() != o.getClass())) return false;
+
+        Ball ball = (Ball) o;
+        return radius == ball.radius;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(radius);
     }
 }
