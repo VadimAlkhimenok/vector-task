@@ -27,12 +27,18 @@ public class CollectionTasks {
         Map<K, Integer> output = new HashMap<>();
 
         for (K item : ks) {
-            Integer counter = 0;
-            for (K k : ks) {
-                if (item == k) counter++;
+            if (output.containsKey(item)) {
+                output.put(item, output.get(item)+1);
+            } else {
+                output.put(item, 1);
             }
-            output.put(item, counter);
         }
         return output;
     }
 }
+
+
+
+
+
+
