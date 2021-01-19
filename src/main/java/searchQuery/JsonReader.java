@@ -6,7 +6,6 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import org.jsoup.Jsoup;
 
-import javax.swing.text.html.HTML;
 import java.io.BufferedReader;
 import java.util.ArrayList;
 
@@ -24,7 +23,6 @@ public class JsonReader {
 
             String title = wikiJsonObject.get("title").getAsString();
             String snippet = Jsoup.parse(wikiJsonObject.get("snippet").getAsString()).text();
-
             int pageid = wikiJsonObject.get("pageid").getAsInt();
 
             WikiData wikiData = new WikiData(title, pageid, snippet);
