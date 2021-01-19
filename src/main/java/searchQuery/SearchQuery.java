@@ -17,12 +17,8 @@ public class SearchQuery {
             if (HttpURLConnection.HTTP_OK == connection.getResponseCode()) {
                 BufferedReader json = new BufferedReader(new InputStreamReader(connection.getInputStream()));
                 JsonReader.readData(json);
-
-                if (json.readLine() == null) {
-                    System.out.println("Error! Incorrect input data");
-                }
             } else {
-                System.out.println("Error connection: " + connection.getResponseCode() + ", " + connection.getResponseMessage());
+                System.out.println("Error of connection: " + connection.getResponseCode() + ", " + connection.getResponseMessage());
             }
 
         } catch (Throwable error) {

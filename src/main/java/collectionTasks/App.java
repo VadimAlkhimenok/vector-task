@@ -31,7 +31,7 @@ public class App {
 //        System.out.println("Size: " + result.size());
 
         // arrayToMap
-        Integer[] input = {1, 2, 1, 2, 5};
+        Integer[] input = {1, 2, 1, 2, 5, 1, 56};
 
         System.out.println();
         System.out.println("Array to map");
