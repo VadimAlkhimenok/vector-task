@@ -1,36 +1,22 @@
 package searchQuery;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import org.jsoup.Jsoup;
-
-import java.io.BufferedReader;
-import java.util.ArrayList;
+import com.google.gson.*;
+import java.io.*;
+import java.net.HttpURLConnection;
 
 public class JsonReader {
-    public static void readData(BufferedReader json) {
-        ArrayList<WikiData> result = new ArrayList<>();
-
+    public static JsonObject getDataInJson(BufferedReader json) {
         JsonElement elem = JsonParser.parseReader(json);
-        JsonObject obj = elem.getAsJsonObject();
+        return elem.getAsJsonObject();
+    }
 
-        JsonArray searchData = obj.getAsJsonObject("query").get("search").getAsJsonArray();
+    public static JsonArray searchDataInJson(JsonObject obj, String ...args) {
+        return obj.getAsJsonObject(args[0]).get(args[1]).getAsJsonArray();
+    }
 
-        for (JsonElement el : searchData) {
-            JsonObject wikiJsonObject = el.getAsJsonObject();
-
-            String title = wikiJsonObject.get("title").getAsString();
-            String snippet = Jsoup.parse(wikiJsonObject.get("snippet").getAsString()).text();
-            int pageid = wikiJsonObject.get("pageid").getAsInt();
-
-            WikiData wikiData = new WikiData(title, pageid, snippet);
-            result.add(wikiData);
-        }
-
-        for (WikiData w : result) {
-            System.out.println(w);
-        }
+    public static JsonArray getArrayData(HttpURLConnection connection, String ...args) throws IOException {
+        BufferedReader json = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+        JsonObject data = getDataInJson(json);
+        return searchDataInJson(data, args[0], args[1]);
     }
 }
