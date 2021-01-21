@@ -13,6 +13,6 @@ public class WikiData {
 
     @Override
     public String toString() {
-        return '{' + "title='" + title + ", pageid=" + pageid + ", snippet='" + snippet + '}';
+        return '{' + "title=" + title + ", pageid=" + pageid + ", snippet=" + snippet + '}';
     }
 }

@@ -5,10 +5,13 @@ import java.util.ArrayList;
 
 public class App {
     public static void main(String[] args) {
-        String word = InputScanner.inputSearchWord();
-        String query = QueryString.getStringForSearch(word);
-        JsonArray data = SearchQuery.getQuery(query, "query", "search");
-        ArrayList<WikiData> arrayList = NewData.getNewData(data);
-        NewData.showNewData(arrayList);
+        SearchQuery searchQuery = new SearchQuery("query", "search");
+        searchQuery.inputSearchingWord();
+        searchQuery.getLinkForSearch();
+        JsonArray data = searchQuery.getDataFromWiki();
+
+        NewData newData = new NewData();
+        ArrayList<WikiData> arrayList = newData.getNewData(data);
+        newData.showNewData(arrayList);
     }
 }
