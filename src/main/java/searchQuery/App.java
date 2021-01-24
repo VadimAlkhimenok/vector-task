@@ -1,17 +1,19 @@
 package searchQuery;
 
-import com.google.gson.JsonArray;
-import java.util.ArrayList;
+import java.util.*;
 
 public class App {
     public static void main(String[] args) {
-        SearchQuery searchQuery = new SearchQuery("query", "search");
-        searchQuery.inputSearchingWord();
-        searchQuery.getLinkForSearch();
-        JsonArray data = searchQuery.getDataFromWiki();
+        System.out.print("Input searching word: ");
+        Console console = new Console();
+        String url = console.getWorkingUrl();
 
-        NewData newData = new NewData();
-        ArrayList<WikiData> arrayList = newData.getNewData(data);
-        newData.showNewData(arrayList);
+        Request request = new Request();
+        Response response = request.getJsonData(url);
+        ArrayList<SearchData> result = response.getQuery().getSearch();
+
+        for (SearchData object : result) {
+            System.out.println(object);
+        }
     }
 }
