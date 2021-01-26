@@ -1,18 +1,24 @@
 package searchQuery;
 
+import org.springframework.web.client.RestTemplate;
+
 import java.util.*;
 
 public class App {
     public static void main(String[] args) {
-        System.out.print("Input searching word: ");
         Console console = new Console();
-        String url = console.getWorkingUrl();
+        System.out.print("Input searching word: ");
+        String searchingWord = new Scanner(System.in).nextLine();
+        console.setWord(searchingWord);
+        String word = console.getWord();
+        String url = console.getWorkingUrl(word);
 
-        Request request = new Request();
-        Response response = request.getJsonData(url);
-        ArrayList<SearchData> result = response.getQuery().getSearch();
+        RestTemplate restTemplate = new RestTemplate();
+        Response response = restTemplate.getForObject(url, Response.class);
+        ArrayList<SearchData> result = Objects.requireNonNull(response).getQuery().getSearch();
 
         for (SearchData object : result) {
+            object.setSnippet(object.getSnippet().replaceAll("<.*?>",""));
             System.out.println(object);
         }
     }
