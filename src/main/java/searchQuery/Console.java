@@ -19,6 +19,6 @@ public class Console {
     }
 
     public String getWorkingUrl (String word) {
-        return getUrl() + word;
+        return url + word;
     }
 }

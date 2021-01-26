@@ -17,8 +17,10 @@ public class App {
         Response response = restTemplate.getForObject(url, Response.class);
         ArrayList<SearchData> result = Objects.requireNonNull(response).getQuery().getSearch();
 
+        Util util = new Util();
+
         for (SearchData object : result) {
-            object.setSnippet(object.getSnippet().replaceAll("<.*?>",""));
+            object.setSnippet(util.normalizeData(object.getSnippet()));
             System.out.println(object);
         }
     }
