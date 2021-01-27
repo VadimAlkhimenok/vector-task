@@ -4,42 +4,42 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class WikiData {
     @JsonProperty("batchcomplete")
-    private BathComplete batchComplete;
+    private BathCompleteModel batchComplete;
 
     @JsonProperty("continue")
-    private Continue continues;
+    private ContinueModel continues;
 
-    private Query query;
+    private QueryModel query;
 
     public WikiData() {}
 
-    public WikiData(BathComplete batchComplete, Continue continues, Query query) {
+    public WikiData(BathCompleteModel batchComplete, ContinueModel continues, QueryModel query) {
         this.batchComplete = batchComplete;
         this.continues = continues;
         this.query = query;
     }
 
-    public BathComplete getBatchComplete() {
+    public BathCompleteModel getBatchComplete() {
         return batchComplete;
     }
 
-    public void setBatchComplete(BathComplete batchComplete) {
+    public void setBatchComplete(BathCompleteModel batchComplete) {
         this.batchComplete = batchComplete;
     }
 
-    public Continue getContinues() {
+    public ContinueModel getContinues() {
         return continues;
     }
 
-    public void setContinues(Continue continues) {
+    public void setContinues(ContinueModel continues) {
         this.continues = continues;
     }
 
-    public Query getQuery() {
+    public QueryModel getQuery() {
         return query;
     }
 
-    public void setQuery(Query query) {
+    public void setQuery(QueryModel query) {
         this.query = query;
     }
 }

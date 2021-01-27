@@ -1,13 +1,13 @@
 package searchQuery.models;
 
-public class BathComplete {
+public class BathCompleteModel {
     private String bathCompleteModel;
 
-    public BathComplete(String bathCompleteModel) {
+    public BathCompleteModel(String bathCompleteModel) {
         this.bathCompleteModel = bathCompleteModel;
     }
 
-    public BathComplete() {}
+    public BathCompleteModel() {}
 
     public String getBathCompleteModel() {
         return bathCompleteModel;

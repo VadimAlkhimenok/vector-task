@@ -15,7 +15,6 @@ public class App {
         WikiService wikiService = new WikiServiceImpl();
         String url = wikiService.getUrl(word);
         WikiData wikiData = wikiService.getWikiData(url);
-
         List<ResultData> result = wikiData.getQuery().getResultData();
         List<ResultData> parseResult = wikiService.getParseWikiData(result);
 

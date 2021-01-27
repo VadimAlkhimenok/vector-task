@@ -4,26 +4,26 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.*;
 
-public class Query {
+public class QueryModel {
     @JsonProperty("search")
     private List<ResultData> resultData;
 
     @JsonProperty("searchinfo")
-    private SearchInfo searchInfo;
+    private SearchInfoModel searchInfoModel;
 
-    public Query(SearchInfo searchInfo, List<ResultData> resultData) {
-        this.searchInfo = searchInfo;
+    public QueryModel(SearchInfoModel searchInfoModel, List<ResultData> resultData) {
+        this.searchInfoModel = searchInfoModel;
         this.resultData = resultData;
     }
 
-    public Query() {}
+    public QueryModel() {}
 
-    public SearchInfo getSearchInfo() {
-        return searchInfo;
+    public SearchInfoModel getSearchInfo() {
+        return searchInfoModel;
     }
 
-    public void setSearchInfo(SearchInfo searchInfo) {
-        this.searchInfo = searchInfo;
+    public void setSearchInfo(SearchInfoModel searchInfoModel) {
+        this.searchInfoModel = searchInfoModel;
     }
 
     public List<ResultData> getResultData() {
