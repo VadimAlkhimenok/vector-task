@@ -1,27 +1,25 @@
 package searchQuery;
 
-import org.springframework.web.client.RestTemplate;
+import searchQuery.models.*;
+import searchQuery.wikiService.*;
 
+import java.io.IOException;
 import java.util.*;
 
 public class App {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Console console = new Console();
         System.out.print("Input searching word: ");
-        String searchingWord = new Scanner(System.in).nextLine();
-        console.setWord(searchingWord);
-        String word = console.getWord();
-        String url = console.getWorkingUrl(word);
+        String word = console.inputWordForSearch();
 
-        RestTemplate restTemplate = new RestTemplate();
-        Response response = restTemplate.getForObject(url, Response.class);
-        ArrayList<SearchData> result = Objects.requireNonNull(response).getQuery().getSearch();
+        WikiService wikiService = new WikiServiceImpl();
+        String url = wikiService.getUrl(word);
+        WikiData wikiData = wikiService.getWikiData(url);
 
-        Util util = new Util();
+        List<ResultData> result = wikiData.getQuery().getResultData();
+        List<ResultData> parseResult = wikiService.getParseWikiData(result);
 
-        for (SearchData object : result) {
-            object.setSnippet(util.normalizeData(object.getSnippet()));
-            System.out.println(object);
-        }
+        wikiService.showResultInConsole(parseResult);
+        wikiService.writeResultInFile(parseResult);
     }
 }

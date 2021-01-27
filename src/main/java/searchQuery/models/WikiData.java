@@ -1,39 +1,37 @@
-package searchQuery;
+package searchQuery.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.Map;
-
-public class Response {
+public class WikiData {
     @JsonProperty("batchcomplete")
-    private String batchComplete;
+    private BathComplete batchComplete;
 
     @JsonProperty("continue")
-    private Map<String, Object> continues;
+    private Continue continues;
 
     private Query query;
 
-    public Response () {}
+    public WikiData() {}
 
-    public Response(String batchComplete, Map<String, Object> continues, Query query) {
+    public WikiData(BathComplete batchComplete, Continue continues, Query query) {
         this.batchComplete = batchComplete;
         this.continues = continues;
         this.query = query;
     }
 
-    public String getBatchComplete() {
+    public BathComplete getBatchComplete() {
         return batchComplete;
     }
 
-    public void setBatchComplete(String batchComplete) {
+    public void setBatchComplete(BathComplete batchComplete) {
         this.batchComplete = batchComplete;
     }
 
-    public Map<String, Object> getContinues() {
+    public Continue getContinues() {
         return continues;
     }
 
-    public void setContinues(Map<String, Object> continues) {
+    public void setContinues(Continue continues) {
         this.continues = continues;
     }
 
