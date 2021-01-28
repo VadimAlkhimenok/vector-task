@@ -2,10 +2,10 @@ package searchQuery;
 
 import java.util.Scanner;
 
-public class Console {
+public class ConsoleInput {
     private String word;
 
-    public Console() {}
+    public ConsoleInput() {}
 
     public String getWord() {
         return word;

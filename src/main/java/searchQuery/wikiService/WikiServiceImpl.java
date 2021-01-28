@@ -1,13 +1,10 @@
 package searchQuery.wikiService;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import org.springframework.web.client.RestTemplate;
+import searchQuery.Storage;
 import searchQuery.util.Util;
 import searchQuery.models.*;
 
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.List;
 
 public class WikiServiceImpl implements WikiService {
@@ -18,9 +15,9 @@ public class WikiServiceImpl implements WikiService {
     }
 
     @Override
-    public WikiData getWikiData(String url) {
+    public void putWikiDataInStorage(String url) {
         RestTemplate restTemplate = new RestTemplate();
-        return restTemplate.getForObject(url, WikiData.class);
+        Storage.getInstance().setResult(restTemplate.getForObject(url, WikiData.class));
     }
 
     @Override
@@ -29,22 +26,5 @@ public class WikiServiceImpl implements WikiService {
             object.setSnippet(Util.normalizeData(object.getSnippet()));
         }
         return resultData;
-    }
-
-    @Override
-    public void showResultInConsole(List<ResultData> result) {
-        for (ResultData object : result) {
-            System.out.println(object);
-        }
-    }
-
-    @Override
-    public void writeResultInFile(List<ResultData> result) throws IOException {
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        String jo = gson.toJson(result);
-
-        FileWriter fw = new FileWriter( "src/main/java/searchQuery/wikiData.json" );
-        fw.write(jo);
-        fw.close();
     }
 }
