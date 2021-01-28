@@ -3,10 +3,11 @@ package searchQuery;
 import searchQuery.output.ConsoleOutput;
 import searchQuery.output.FileOutput;
 import searchQuery.output.OutputResult;
+import searchQuery.output.TypeOutput;
 import searchQuery.wikiService.WikiService;
 import searchQuery.wikiService.WikiServiceImpl;
 
-import static searchQuery.TypeOutput.*;
+import static searchQuery.output.TypeOutput.*;
 
 public class Factory {
     private static Factory factory;

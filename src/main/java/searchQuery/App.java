@@ -7,7 +7,7 @@ import searchQuery.wikiService.*;
 import java.io.IOException;
 import java.util.*;
 
-import static searchQuery.TypeOutput.*;
+import static searchQuery.output.TypeOutput.*;
 
 public class App {
     public static void main(String[] args) throws IOException {

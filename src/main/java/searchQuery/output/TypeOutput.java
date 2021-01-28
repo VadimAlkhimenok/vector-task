@@ -1,4 +1,4 @@
-package searchQuery;
+package searchQuery.output;
 
 public enum TypeOutput {
     CONSOLE(1),
