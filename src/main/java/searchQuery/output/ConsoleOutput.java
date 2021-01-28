@@ -2,15 +2,14 @@ package searchQuery.output;
 
 import searchQuery.models.ResultData;
 import searchQuery.wikiService.WikiService;
+import searchQuery.wikiService.WikiServiceImpl;
 
 import java.util.List;
 
 public class ConsoleOutput implements OutputResult {
-    private final WikiService wikiService;
+    private final WikiService wikiService = new WikiServiceImpl();
 
-    public ConsoleOutput(WikiService wikiService) {
-        this.wikiService = wikiService;
-    }
+    public ConsoleOutput() {}
 
     @Override
     public void showResult(List<ResultData> result) {

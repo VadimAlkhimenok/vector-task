@@ -4,14 +4,11 @@ import searchQuery.output.ConsoleOutput;
 import searchQuery.output.FileOutput;
 import searchQuery.output.OutputResult;
 import searchQuery.output.TypeOutput;
-import searchQuery.wikiService.WikiService;
-import searchQuery.wikiService.WikiServiceImpl;
 
 import static searchQuery.output.TypeOutput.*;
 
 public class Factory {
     private static Factory factory;
-    WikiService wikiService = new WikiServiceImpl();
 
     private Factory() {}
 
@@ -24,9 +21,9 @@ public class Factory {
 
     public OutputResult create(TypeOutput type) {
         if (CONSOLE.equals(type)) {
-            return new ConsoleOutput(wikiService);
+            return new ConsoleOutput();
         } else {
-            return new FileOutput(wikiService);
+            return new FileOutput();
         }
     }
 }

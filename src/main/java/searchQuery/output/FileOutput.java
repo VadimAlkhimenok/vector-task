@@ -4,17 +4,16 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import searchQuery.models.ResultData;
 import searchQuery.wikiService.WikiService;
+import searchQuery.wikiService.WikiServiceImpl;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
 public class FileOutput implements OutputResult {
-    private WikiService wikiService;
+    private final WikiService wikiService = new WikiServiceImpl();
 
-    public FileOutput(WikiService wikiService) {
-        this.wikiService = wikiService;
-    }
+    public FileOutput() {}
 
     @Override
     public void showResult(List<ResultData> result) throws IOException {
