@@ -16,12 +16,12 @@ public class App {
         String word = consoleInput.inputWordForSearch(); // input word
 
         WikiService wikiService = new WikiServiceImpl();
-        String url = wikiService.getUrl(word); // ready url
+        String url = wikiService.getUrl(word); // working url
 
         wikiService.putWikiDataInStorage(url); // put data in storage
 
         WikiData wikiData = Storage.getInstance().getResult(); // get data from storage
-        List<ResultData> result = wikiData.getQuery().getResultData(); // get data from field query
+        List<ResultData> result = wikiData.getQuery().getResultData(); // get data from model query
 
         OutputResult console = Factory.getFactory().create(CONSOLE);
         List<ResultData> parseDataConsole = console.convertTextInObj(result); // delete tags for console output

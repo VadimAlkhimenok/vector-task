@@ -22,8 +22,10 @@ public class Factory {
     public OutputResult create(TypeOutput type) {
         if (CONSOLE.equals(type)) {
             return new ConsoleOutput();
-        } else {
+        } else if (FILE.equals(type)) {
             return new FileOutput();
+        } else {
+            return null;
         }
     }
 }
