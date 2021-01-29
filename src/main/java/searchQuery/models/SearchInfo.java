@@ -2,14 +2,14 @@ package searchQuery.models;
 
 import java.util.Map;
 
-public class SearchInfoModel {
+public class SearchInfo {
     private Map<String, Object> searchInfo;
 
-    public SearchInfoModel(Map<String, Object> searchInfo) {
+    public SearchInfo(Map<String, Object> searchInfo) {
         this.searchInfo = searchInfo;
     }
 
-    public SearchInfoModel() {}
+    public SearchInfo() {}
 
     public Map<String, Object> getSearchInfoModel() {
         return searchInfo;

@@ -1,34 +1,33 @@
 package searchQuery;
 
+import searchQuery.extra.Url;
+import searchQuery.factories.OutputServiceFactory;
 import searchQuery.models.*;
-import searchQuery.output.OutputResult;
-import searchQuery.wikiService.*;
+import searchQuery.service.impl.*;
+import searchQuery.storage.Storage;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.List;
 
-import static searchQuery.output.TypeOutput.*;
+import static searchQuery.extra.OutputTypes.*;
 
 public class App {
     public static void main(String[] args) throws IOException {
-        ConsoleInput consoleInput = new ConsoleInput();
-        System.out.print("Input word: ");
-        String word = consoleInput.inputWordForSearch(); // input word
+        ConsoleInputService consoleInputService = new ConsoleInputService();
+        String search = consoleInputService.readData();
 
-        WikiService wikiService = new WikiServiceImpl();
-        String url = wikiService.getUrl(word); // working url
+        Storage storage = new Storage();
 
-        wikiService.putWikiDataInStorage(url); // put data in storage
+        WikiServiceImpl wikiService = new WikiServiceImpl(storage);
+        wikiService.putWikiDataInStorage(Url.url + search);
 
-        WikiData wikiData = Storage.getInstance().getResult(); // get data from storage
-        List<ResultData> result = wikiData.getQuery().getResultData(); // get data from model query
+        Wiki wiki = wikiService.getWiki();
 
-        OutputResult console = Factory.getFactory().create(CONSOLE);
-        List<ResultData> parseDataConsole = console.convertTextInObj(result); // delete tags for console output
-        console.showResult(console.convertTextInObj(parseDataConsole)); // show data in console
+        ResultService resultService = new ResultService();
+        List<Result> results = resultService.getResultFromWiki(wiki);
+        List<Result> parseResults = resultService.getParseWikiData(results);
 
-        OutputResult file = Factory.getFactory().create(FILE);
-        List<ResultData> parseDataFile = file.convertTextInObj(result); // delete tags for file output
-        file.showResult(file.convertTextInObj(parseDataFile)); // show data in file
+        OutputServiceFactory.getFactory().getOutputService(CONSOLE).showResult(parseResults);
+        OutputServiceFactory.getFactory().getOutputService(FILE).showResult(parseResults);
     }
 }

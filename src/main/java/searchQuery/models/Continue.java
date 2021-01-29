@@ -2,14 +2,14 @@ package searchQuery.models;
 
 import java.util.Map;
 
-public class ContinueModel {
+public class Continue {
     private Map<String, Object> continueModel;
 
-    public ContinueModel(Map<String, Object> continueModel) {
+    public Continue(Map<String, Object> continueModel) {
         this.continueModel = continueModel;
     }
 
-    public ContinueModel() {}
+    public Continue() {}
 
     public Map<String, Object> getContinueModel() {
         return continueModel;

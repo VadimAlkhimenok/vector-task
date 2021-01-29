@@ -2,20 +2,21 @@ package searchQuery.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class ResultData {
+public class Result {
+
     private String title;
     private String snippet;
 
     @JsonProperty("pageid")
     private int pageId;
 
-    public ResultData(String title, int pageId, String snippet) {
+    public Result(String title, int pageId, String snippet) {
         this.title = title;
         this.pageId = pageId;
         this.snippet = snippet;
     }
 
-    public ResultData() {}
+    public Result() {}
 
     public String getTitle() {
         return title;

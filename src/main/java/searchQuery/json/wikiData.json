@@ -1,0 +1,52 @@
+[
+  {
+    "title": "JavaScript",
+    "snippet": "JavaScript (/ˈdʒɑːvɑːˌskrɪpt/; аббр. JS /ˈdʒeɪ.ɛs./) — мультипарадигменный язык программирования. Поддерживает объектно-ориентированный, императивный и",
+    "pageId": 11922
+  },
+  {
+    "title": "Движок JavaScript",
+    "snippet": "JavaScript и реализация JavaScript) реализовывался как интерпретатор, считывающий и исполняющий исходный код на JavaScript. Первый движок JavaScript создан",
+    "pageId": 2562998
+  },
+  {
+    "title": "ECMAScript",
+    "snippet": "языка: JavaScript, JScript и ActionScript. Язык возник на основе нескольких технологий, самыми известными из которых являются языки JavaScript и JScript",
+    "pageId": 350956
+  },
+  {
+    "title": "JSON",
+    "snippet": "JSON (англ. JavaScript Object Notation, обычно произносится как /ˈdʒeɪsən/ JAY-sən) — текстовый формат обмена данными, основанный на JavaScript. Как и многие",
+    "pageId": 198033
+  },
+  {
+    "title": "TypeScript",
+    "snippet": "позиционируемый как средство разработки веб-приложений, расширяющее возможности JavaScript. Разработчиком языка TypeScript является Андерс Хейлсберг (англ. Anders",
+    "pageId": 4143651
+  },
+  {
+    "title": "AJAX",
+    "snippet": "AJAX, Ajax (ˈeɪdʒæks, от англ. Asynchronous Javascript and XML — «асинхронный JavaScript и XML») — подход к построению интерактивных пользовательских интерфейсов",
+    "pageId": 81897
+  },
+  {
+    "title": "Библиотека JavaScript",
+    "snippet": "Библиотека JavaScript — сборник классов и/или функций на языке JavaScript. Язык JavaScript, изначально разработанный Netscape (а затем развиваемый Mozilla)",
+    "pageId": 1753354
+  },
+  {
+    "title": "V8 (движок JavaScript)",
+    "snippet": "движок JavaScript с открытым исходным кодом, распространяемый по лицензии BSD. Разработан датским отделением компании Google. Разработка JavaScript-движка",
+    "pageId": 1451732
+  },
+  {
+    "title": "JavaScript-фреймворк",
+    "snippet": "JavaScript-фреймворк — это фреймворк для приложений, написанный на языке программирования JavaScript. JavaScript-фреймворк отличается от Javascript-библиотеки",
+    "pageId": 8453602
+  },
+  {
+    "title": "Node.js",
+    "snippet": "платформа, основанная на движке V8 (транслирующем JavaScript в машинный код), превращающая JavaScript из узкоспециализированного языка в язык общего назначения",
+    "pageId": 2451656
+  }
+]
