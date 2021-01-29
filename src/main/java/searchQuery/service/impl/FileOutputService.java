@@ -13,10 +13,11 @@ public class FileOutputService implements OutputService {
     @Override
     public void showResult(List<Result> results) throws IOException {
         System.out.println("Wrote data from wiki in a file");
+
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String jo = gson.toJson(results);
 
-        FileWriter fw = new FileWriter( "src/main/java/searchQuery/json/wikiData.json" );
+        FileWriter fw = new FileWriter( "src/main/resources/json/wikiData.json" );
         fw.write(jo);
         fw.close();
     }

@@ -1,9 +1,8 @@
 package searchQuery.factories;
 
+import searchQuery.common.OutputTypes;
 import searchQuery.service.OutputService;
 import searchQuery.service.impl.*;
-
-import static searchQuery.extra.OutputTypes.*;
 
 public class OutputServiceFactory {
     private static OutputServiceFactory factory;
@@ -17,7 +16,7 @@ public class OutputServiceFactory {
         return factory;
     }
 
-    public OutputService getOutputService(String type) {
+    public OutputService getOutputService(OutputTypes type) {
         switch (type) {
             case CONSOLE:
                 return new ConsoleOutputService();
@@ -27,5 +26,4 @@ public class OutputServiceFactory {
                 return null;
         }
     }
-
 }
