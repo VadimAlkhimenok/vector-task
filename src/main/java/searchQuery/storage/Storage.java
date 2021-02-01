@@ -7,7 +7,7 @@ import searchQuery.util.Util;
 import java.io.IOException;
 import java.util.List;
 
-public abstract class Storage {
+public abstract class Storage implements IStorage {
     private Wiki result;
 
     public Wiki getResult() {
