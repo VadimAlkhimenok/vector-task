@@ -18,13 +18,9 @@ public class App {
         WikiServiceImpl wikiService = new WikiServiceImpl();
         Wiki wiki = wikiService.getWikiByWord(search);
 
-        Storage storage = new Storage();
-        storage.putWikiDataInStorage(wiki);
-
-        List<Result> results = storage.getResultFromWiki();
-        List<Result> parseResults = storage.getParseWikiData(results);
-
-        OutputServiceFactory.getFactory().getOutputService(CONSOLE, parseResults);
-        OutputServiceFactory.getFactory().getOutputService(FILE, parseResults);
+        Storage consoleOutput = OutputServiceFactory.getFactory().getOutputService(CONSOLE);
+        consoleOutput.putWikiDataInStorage(wiki);
+        List<Result> parseResult = consoleOutput.getParseWikiData(consoleOutput.getResultFromWiki());
+        consoleOutput.showResult(parseResult);
     }
 }
