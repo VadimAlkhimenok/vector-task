@@ -40,13 +40,13 @@
     "pageId": 162092
   },
   {
+    "title": "Сравнение C Sharp и Java",
+    "snippet": "ряд различий. Языки C# и Java появились в разное время. Язык Java был создан задолго до появления C#. Под названием Oak Java был разработан компанией",
+    "pageId": 322526
+  },
+  {
     "title": "Java Database Connectivity",
     "snippet": "(англ. Java DataBase Connectivity — соединение с базами данных на Java) — платформенно независимый промышленный стандарт взаимодействия Java-приложений",
     "pageId": 68435
-  },
-  {
-    "title": "Java Persistence API",
-    "snippet": "Java Persistence API (JPA) — спецификация API Java EE, предоставляет возможность сохранять в удобном виде Java-объекты в базе данных. Существует несколько",
-    "pageId": 3665133
   }
 ]

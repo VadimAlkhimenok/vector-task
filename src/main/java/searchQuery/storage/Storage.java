@@ -4,6 +4,7 @@ import searchQuery.models.Result;
 import searchQuery.models.Wiki;
 import searchQuery.util.Util;
 
+import java.io.IOException;
 import java.util.List;
 
 public class Storage {
@@ -31,4 +32,6 @@ public class Storage {
         }
         return results;
     }
+
+    public void showResult(List<Result> results) throws IOException {}
 }

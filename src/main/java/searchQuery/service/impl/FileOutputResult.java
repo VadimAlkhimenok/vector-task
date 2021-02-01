@@ -3,13 +3,13 @@ package searchQuery.service.impl;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import searchQuery.models.Result;
-import searchQuery.service.OutputService;
+import searchQuery.storage.Storage;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
-public class FileOutputService implements OutputService {
+public class FileOutputResult extends Storage {
     @Override
     public void showResult(List<Result> results) throws IOException {
         System.out.println("Wrote data from wiki in a file");

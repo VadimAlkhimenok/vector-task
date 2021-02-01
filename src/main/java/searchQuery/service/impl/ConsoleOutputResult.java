@@ -1,11 +1,11 @@
 package searchQuery.service.impl;
 
 import searchQuery.models.Result;
-import searchQuery.service.OutputService;
+import searchQuery.storage.Storage;
 
 import java.util.List;
 
-public class ConsoleOutputService implements OutputService {
+public class ConsoleOutputResult extends Storage {
     @Override
     public void showResult(List<Result> results) {
         results.forEach(System.out::println);

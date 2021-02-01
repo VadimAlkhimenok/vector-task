@@ -24,7 +24,7 @@ public class App {
         List<Result> results = storage.getResultFromWiki();
         List<Result> parseResults = storage.getParseWikiData(results);
 
-        OutputServiceFactory.getFactory().getOutputService(CONSOLE).showResult(parseResults);
-        OutputServiceFactory.getFactory().getOutputService(FILE).showResult(parseResults);
+        OutputServiceFactory.getFactory().getOutputService(CONSOLE, parseResults);
+        OutputServiceFactory.getFactory().getOutputService(FILE, parseResults);
     }
 }

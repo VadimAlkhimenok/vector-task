@@ -1,8 +1,11 @@
 package searchQuery.factories;
 
 import searchQuery.common.OutputTypes;
-import searchQuery.service.OutputService;
+import searchQuery.models.Result;
 import searchQuery.service.impl.*;
+
+import java.io.IOException;
+import java.util.List;
 
 public class OutputServiceFactory {
     private static OutputServiceFactory factory;
@@ -16,14 +19,13 @@ public class OutputServiceFactory {
         return factory;
     }
 
-    public OutputService getOutputService(OutputTypes type) {
+    public void getOutputService(OutputTypes type, List<Result> results) throws IOException {
         switch (type) {
             case CONSOLE:
-                return new ConsoleOutputService();
+                new ConsoleOutputResult().showResult(results);
             case FILE:
-                return new FileOutputService();
+                new FileOutputResult().showResult(results);
             default:
-                return null;
         }
     }
 }
